@@ -1,0 +1,19 @@
+name: Matrix Configuration
+on:
+    push:
+    workflow_dispatch:
+jobs:
+    deploy-to-ubuntu:
+        runs-on: ubuntu-22.04
+        steps:
+            - name: Print Docker Info
+              run: docker info
+            - name: Run Hello-World Image
+              run: docker run hello-world
+    deploy-to-windows:
+        runs-on: windows-latest
+        steps:
+            - name: Print Docker Info
+              run: docker info
+            - name: Run Hello-World Image
+              run: docker run hello-world
